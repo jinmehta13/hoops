@@ -27,3 +27,6 @@ router.get('/', mainController.showHome);
 router.get('/blogPosts', blogPostsController.showBlogPosts);
 //create a blog post
 router.post('/blogPosts', blogPostsController.createBlogPost);
+
+//getting a single blog post
+router.get('/blogPosts/:blogPost_id', blogPostsController.getBlogPost);

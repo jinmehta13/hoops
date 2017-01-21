@@ -4,7 +4,8 @@ const blogPost = require('../models/blogPost');
 // ==============================================
 module.exports = {
 	createBlogPost: createBlogPost,
-	showBlogPosts: showBlogPosts
+	showBlogPosts: showBlogPosts,
+	getBlogPost: getBlogPost
 }
 
 //functions to be exported and run through various routes
@@ -30,5 +31,14 @@ function showBlogPosts(req, res) {
 			res.send(err);
 
 		res.json(blogPosts);
+	});
+}
+
+function getBlogPost(req, res) {
+	blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
+		if (err)
+			res.send(err);
+
+		res.json(blogPost);
 	});
 }
