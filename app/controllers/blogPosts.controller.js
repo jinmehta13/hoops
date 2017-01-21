@@ -6,7 +6,8 @@ module.exports = {
 	createBlogPost: createBlogPost,
 	showBlogPosts: showBlogPosts,
 	getBlogPost: getBlogPost,
-	updateBlogPost: updateBlogPost
+	updateBlogPost: updateBlogPost,
+	deleteBlogPost: deleteBlogPost
 }
 
 //functions to be exported and run through various routes
@@ -61,4 +62,16 @@ function updateBlogPost(req, res) {
 			res.json({ message: 'Blog Post updated!' });
 		});
 	});
+}
+
+function deleteBlogPost(req, res) {
+	blogPost.remove({
+		_id: req.params.blogPost_id
+	}, function(err, blogPost) {
+		if (err)
+			res.send(err);
+
+		res.json({ message: 'Blog Post successfully deleted' });
+	});
+
 }

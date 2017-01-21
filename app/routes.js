@@ -32,3 +32,5 @@ router.post('/blogPosts', blogPostsController.createBlogPost);
 router.get('/blogPosts/:blogPost_id', blogPostsController.getBlogPost);
 //updating a blog post
 router.put('/blogPosts/:blogPost_id', blogPostsController.updateBlogPost);
+//deleting a blog post
+router.delete('/blogPosts/:blogPost_id', blogPostsController.deleteBlogPost);
