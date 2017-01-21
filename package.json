@@ -1,0 +1,25 @@
+{
+  "name": "hoops",
+  "version": "1.0.0",
+  "description": "a basketball blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinmehta13/hoops.git"
+  },
+  "author": "jezreel and jinesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jinmehta13/hoops/issues"
+  },
+  "homepage": "https://github.com/jinmehta13/hoops#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.7"
+  }
+}
