@@ -23,5 +23,7 @@ router.use(function(req, res, next) {
 //main route
 router.get('/', mainController.showHome);
 
+//show all blog posts
+router.get('/blogPosts', blogPostsController.showBlogPosts);
 //create a blog post
 router.post('/blogPosts', blogPostsController.createBlogPost);
