@@ -16,6 +16,11 @@ var port    = process.env.PORT || 8080;
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB_URI);
 
+mongoose.connection.on('open', function(){
+console.log('connection is open');
+});
+
+
 // ROUTES
 // ==============================================
 
