@@ -9,8 +9,17 @@ const express 			  = require('express'),
 // ==============================================
 module.exports = router;
 
+//middleware
+// ==============================================
+router.use(function(req, res, next) {
+	//log API output to console
+	console.log('Something is happening.');
+	next(); //to pass into the next routes
+});
+
 //route definitions
 // ==============================================
 
 //main route
 router.get('/', mainController.showHome);
+
