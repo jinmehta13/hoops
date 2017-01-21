@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var nodemon = require('nodemon');
 var bodyParser = require('body-parser');
+var dotenv = require('dotenv');
 
 var express = require('express');
 var app     = express();
