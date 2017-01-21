@@ -30,3 +30,5 @@ router.post('/blogPosts', blogPostsController.createBlogPost);
 
 //getting a single blog post
 router.get('/blogPosts/:blogPost_id', blogPostsController.getBlogPost);
+//updating a blog post
+router.put('/blogPosts/:blogPost_id', blogPostsController.updateBlogPost);

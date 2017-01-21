@@ -5,7 +5,8 @@ const blogPost = require('../models/blogPost');
 module.exports = {
 	createBlogPost: createBlogPost,
 	showBlogPosts: showBlogPosts,
-	getBlogPost: getBlogPost
+	getBlogPost: getBlogPost,
+	updateBlogPost: updateBlogPost
 }
 
 //functions to be exported and run through various routes
@@ -40,5 +41,24 @@ function getBlogPost(req, res) {
 			res.send(err);
 
 		res.json(blogPost);
+	});
+}
+
+function updateBlogPost(req, res) {
+	blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
+		if (err)
+			res.send(err);
+
+		//update the blog post
+		blogPost.subject = req.body.subject;
+		blogPost.description = req.body.description;
+
+		//save the blog post
+		blogPost.save(function(err) {
+			if (err)
+				res.send(err);
+
+			res.json({ message: 'Blog Post updated!' });
+		});
 	});
 }
