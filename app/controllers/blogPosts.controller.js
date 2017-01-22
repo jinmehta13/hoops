@@ -1,4 +1,4 @@
-const blogPost = require('../models/blogPost');
+const _blogPost = require('../models/blogPost');
 
 //exports
 // ==============================================
@@ -15,6 +15,7 @@ module.exports = {
 
 function createBlogPost(req, res) {
 	//Create a new blog post
+	var blogPost = new _blogPost(); //create a new instance of the blogPost model
 	blogPost.subject	 = req.body.subject; //set the blog post's subject
 	blogPost.description = req.body.description //set the blog post's description
 
@@ -28,7 +29,7 @@ function createBlogPost(req, res) {
 }
 
 function showBlogPosts(req, res) {
-	blogPost.find(function(err, blogPosts) {
+	_blogPost.find(function(err, blogPosts) {
 		if (err)
 			res.send(err);
 
@@ -37,7 +38,7 @@ function showBlogPosts(req, res) {
 }
 
 function getBlogPost(req, res) {
-	blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
+	_blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
 		if (err)
 			res.send(err);
 
@@ -46,7 +47,7 @@ function getBlogPost(req, res) {
 }
 
 function updateBlogPost(req, res) {
-	blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
+	_blogPost.findById(req.params.blogPost_id, function(err, blogPost) {
 		if (err)
 			res.send(err);
 
@@ -65,7 +66,7 @@ function updateBlogPost(req, res) {
 }
 
 function deleteBlogPost(req, res) {
-	blogPost.remove({
+	_blogPost.remove({
 		_id: req.params.blogPost_id
 	}, function(err, blogPost) {
 		if (err)
