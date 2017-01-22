@@ -18,10 +18,13 @@ var port    = process.env.PORT || 8080;
 // ==============================================
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('../hoops'));
+
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/index.html');
 });
+
 
 
 //prefix the routes with /api
