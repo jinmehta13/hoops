@@ -2,13 +2,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="/angular.js"></script>
+
+
+<script>
+var myApp = angular.module('myApp',[]);
+
+myApp.controller('hoopsController', ['$scope', function($scope) {
+  $scope.test = 'Hola world!';
+}]);
+
+
+
+</script>
+
 
 <body>
 
-<div ng-app="">
-  <p>Name: <input type="text" ng-model="name"></p>
-  <p>{{name}}</p>
+<div ng-app='myApp' ng-controller='hoopsController'>
+  <p>{{test}}</p>
 </div>
 
 
