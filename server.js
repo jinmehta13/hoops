@@ -1,3 +1,4 @@
+ls
 //load environment variables
 // ==============================================
 require('dotenv').config();
@@ -19,7 +20,14 @@ var port    = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('../hoops'));
-app.use(express.static('../hoops/styles'));
+app.use(express.static('../hoops/app'));
+app.use(express.static('../hoops/app/styles'));
+app.use(express.static('../hoops/app/config'));
+app.use(express.static('../hoops/app/controllers'));
+app.use(express.static('../hoops/app/models'));
+app.use(express.static('../hoops/app/views'));
+
+
 
 
 
