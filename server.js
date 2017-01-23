@@ -19,6 +19,16 @@ var port    = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('../hoops'));
+app.use(express.static('../hoops/app/config'));
+app.use(express.static('../hoops/app/controllers'));
+app.use(express.static('../hoops/models'));
+app.use(express.static('../hoops/styles'));
+app.use(express.static('../hoops/views'));
+
+
+
+
+
 
 
 app.get('/', function(req, res){
