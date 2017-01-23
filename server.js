@@ -7,7 +7,7 @@ require('dotenv').config();
 var mongoose 	= require('mongoose');
 var nodemon 	= require('nodemon');
 var bodyParser 	= require('body-parser');
-
+var path = require('path');
 //configure our application
 // ==============================================
 var express = require('express');
@@ -18,13 +18,17 @@ var port    = process.env.PORT || 8080;
 // ==============================================
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('../hoops'));
+
+app.use(express.static(path.join(__dirname));
+
+/*
 app.use(express.static('../hoops/app'));
-app.use(express.static('../hoops/app/styles'));
 app.use(express.static('../hoops/app/config'));
 app.use(express.static('../hoops/app/controllers'));
 app.use(express.static('../hoops/app/models'));
 app.use(express.static('../hoops/app/views'));
+*/
+app.use(express.static('../hoops/app/styles'));
 
 
 
