@@ -7,7 +7,7 @@ require('dotenv').config();
 var mongoose 	= require('mongoose');
 var nodemon 	= require('nodemon');
 var bodyParser 	= require('body-parser');
-
+var path = require('path');
 //configure our application
 // ==============================================
 var express = require('express');
@@ -18,6 +18,29 @@ var port    = process.env.PORT || 8080;
 // ==============================================
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(express.static(__dirname));
+
+/*
+app.use(express.static('../hoops/app'));
+app.use(express.static('../hoops/app/config'));
+app.use(express.static('../hoops/app/controllers'));
+app.use(express.static('../hoops/app/models'));
+app.use(express.static('../hoops/app/views'));
+*/
+app.use(express.static('../hoops/app/styles'));
+
+
+
+
+
+
+
+app.get('/', function(req, res){
+	res.sendFile(__dirname + '/index.html');
+});
+
+
 
 //prefix the routes with /api
 // ==============================================
@@ -38,9 +61,6 @@ console.log('connection is open');
 
 /*
 // sample route with a route the way we're used to seeing it
-app.get('/', function(req, res) {
-    res.send('hello world!');  
-});
 
 // we'll create our routes here
 */
