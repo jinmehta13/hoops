@@ -28,6 +28,8 @@ myApp.controller('teamsController', ['$scope', function($scope) {
 			{"teamGif": "thunder.gif"},
 			{"teamGif": "timberwolves.gif"},
 			{"teamGif": "trailblazers.gif"},
+			{"teamGif": "spurs.gif"},
+			{"teamGif": "celtics.gif"},
 			{"teamGif": "warriors.gif"},
 			{"teamGif": "wizards.gif"}
 			];
