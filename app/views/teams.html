@@ -1,13 +1,18 @@
 
 <div ng-controller='teamsController'>
-  <p>{{test}}</p>
+
+  <form class="search-bar form-inline my-2 my-lg-0">
+      <input ng-model="searchText" class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
 	<div class="container-fluid">
         	<div class="row">
-                	<div ng-repeat="team in teams" class="col-xs-6 col-sm-4 col-md-2 col-lg-1 col-xl-1">
+                	<div ng-repeat="team in teams | orderBy: 'teamName'| filter: searchText " class="col-xs-6 col-sm-4 col-md-2 col-lg-1 col-xl-1">
                         	<div class="panel panel-default">
                                 	<div class="panel-heading">
                                         	<h5 class=" center">
-                                                Team Name
+                                                {{team.teamName}}
                                         	</h3>
                                 	</div>
                                 	<div class="panel-body center">
