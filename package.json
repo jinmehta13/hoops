@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jinmehta13/hoops#readme",
   "dependencies": {
+    "angular-animate": "^1.6.1",
     "body-parser": "^1.16.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
