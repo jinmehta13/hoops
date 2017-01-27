@@ -5,9 +5,14 @@ myApp.config(
 		$stateProvider
 			.state('teams', {
 				url: '/teams',
-        			templateUrl: 'app/views/teams.html',
+        		templateUrl: 'app/views/teams.html',
 				controller: 'teamsController'
 			}
+		).state('team', {
+			url:'/team/:tname',
+			templateUrl: 'app/views/team.html',
+	
+		}
 		);
 	}
 );
