@@ -1,9 +1,11 @@
 
 <div ng-controller='teamsController'>
 	<div class="container-fluid">
+        <br>
         <form   class="search-bar">
       <input ng-model="searchText" class="form-control mr-sm-2" type="text" placeholder="Search">
     </form>
+    <br>
 
         	<div class="row">
                 	<div ng-repeat="team in teams | orderBy: 'teamName'| filter: searchText " class="col-xs-6 col-sm-4 col-md-2 col-lg-1 col-xl-1">
