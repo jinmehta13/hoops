@@ -2,10 +2,8 @@
 myApp.controller('teamsController', ['$scope', '$state', function($scope, $state) {
   $scope.test = 'Hello world, AngularJS is working as expected';
   $scope.goToTeam= function(name){
-  		$state.go('team', {tname: name});
+  		$state.go('teamName', {teamName: name});
   };
-
-
   $scope.teams = [
 			{"teamName": "76ers", "teamGif": "76ers.gif"},
 			{"teamName": "bucks", "teamGif": "bucks.gif"},

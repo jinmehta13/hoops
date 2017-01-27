@@ -8,8 +8,8 @@ myApp.config(
         		templateUrl: 'app/views/teams.html',
 				controller: 'teamsController'
 			}
-		).state('team', {
-			url:'/team/:tname',
+		).state('teamName', {
+			url:'/teams/:teamName',
 			templateUrl: 'app/views/team.html',
 	
 		}
