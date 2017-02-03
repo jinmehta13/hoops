@@ -16,9 +16,9 @@ module.exports = {
 function createBlogPost(req, res) {
 	//Create a new blog post
 	var blogPost = new _blogPost(); //create a new instance of the blogPost model
-	blogPost.subject	 = req.body.subject; //set the blog post's subject
-	blogPost.description = req.body.description //set the blog post's description
-
+	blogPost.subject	 = req.body.postSubject; //set the blog post's subject
+	blogPost.description = req.body.postBody //set the blog post's description
+	blogPost.team = req.body.team;
 	blogPost.save(function(err) {
 		if (err)
 			res.send(err);
@@ -52,8 +52,8 @@ function updateBlogPost(req, res) {
 			res.send(err);
 
 		//update the blog post
-		blogPost.subject = req.body.subject;
-		blogPost.description = req.body.description;
+		blogPost.subject = req.body.postSubject;
+		blogPost.description = req.body.postBody;
 
 		//save the blog post
 		blogPost.save(function(err) {

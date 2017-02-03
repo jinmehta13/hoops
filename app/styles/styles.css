@@ -9,10 +9,35 @@
     }
 .center-div{
 	 margin: 0 auto;
+	 text-justify: inter-word;
+	text-align: center;
+}
+
+.subject {
+	margin: 20px 75px 20px 75px; 
+	text-justify: inter-word;
+	text-align: center;
+
+}
+
+.textarea-subject{
+	text-align:center;
+
+}
+
+.textarea-post{
+
+	text-align:center;
+
 }
 
 
+.post {
+	margin: 20px 75px 20px 75px; 
+	text-justify: inter-word;
+	text-align: center;
 
+}
 
 
 	

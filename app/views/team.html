@@ -9,7 +9,30 @@
     <p>read, post, share.</p> 
 </div>
 
+<div class=" form-group  center-div">
+	Subject  <div></div>
+<input   ng-model="postSubject" type="textarea" class=" textarea-subject form-control" >
+	Post <div></div>
+<textarea ng-model="postBody"type="textarea" class="form-control textarea-post" rows="4"> </textarea> <div></div>
+<button type="button" class="form-control" ng-click=""> Submit </button>
+</div>
+
+
+
+<div ng-repeat="post in posts" >
+<div class "subject">
+{{post.postSubject}}
+</div>
+<div class="post">
+{{post.postBody}}</div>
+</div>
+
+
 
 </div>
+
+
+
+
 
 </div>
